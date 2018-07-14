@@ -8,22 +8,6 @@ import { SortablejsOptions } from 'angular-sortablejs/dist';
 })
 export class AppComponent {
   title = 'app';
-  cities = [
-    'Ankara',
-    'Moscow',
-    'Munich',
-    'Paris',
-    'Washington',
-  ];
-  options: SortablejsOptions;
-  constructor() {
+ 
 
-    this.options = {
-      onUpdate: (e) => {
-        console.log(e);
-        console.log(this.cities);
-
-      }
-    }
-  }
 }

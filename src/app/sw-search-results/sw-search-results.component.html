@@ -1,0 +1,4 @@
+<h2>Drag / drop the item</h2>
+<div [sortablejs]="searchResults" [sortablejsOptions]="options">
+  <div *ngFor="let result of searchResults">{{ result.name}}</div>
+</div>

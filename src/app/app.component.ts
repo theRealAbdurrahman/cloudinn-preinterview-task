@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SortablejsOptions } from 'angular-sortablejs/dist';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  cities = [
+    'Ankara',
+    'Moscow',
+    'Munich',
+    'Paris',
+    'Washington',
+  ];
+  options: SortablejsOptions;
+  constructor() {
+
+    this.options = {
+      onUpdate: (e) => {
+        console.log(e);
+        console.log(this.cities);
+
+      }
+    }
+  }
 }

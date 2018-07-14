@@ -6,10 +6,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SwAPIService {
-  baseUrl: string = ' https://swapi.co/api/people/?search=sky'
+  baseUrl: string = ' https://swapi.co/api/people/?search='
 
   constructor(private http: HttpClient) { }
-  getPeople() {
-    return this.http.get(this.baseUrl);
+  getPeople(searchStr) {
+    return this.http.get(`${this.baseUrl}${searchStr}`);
   }
 }

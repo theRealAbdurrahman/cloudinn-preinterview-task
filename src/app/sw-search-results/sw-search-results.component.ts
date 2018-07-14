@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sw-search-results.component.css']
 })
 export class SwSearchResultsComponent implements OnInit {
+  searchStr: any = "";
   searchResults = [];
 
   options: SortablejsOptions;
@@ -21,11 +22,10 @@ export class SwSearchResultsComponent implements OnInit {
         console.log(this.searchResults);
       }
     }
-    this.getPeople()
   }
 
   getPeople() {
-    this.swAPI.getPeople().subscribe(
+    this.swAPI.getPeople(this.searchStr).subscribe(
       (res) => {
         console.log(res);
         this.searchResults = res['results'];

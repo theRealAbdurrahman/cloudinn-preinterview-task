@@ -12,14 +12,13 @@ export class SwSearchResultsComponent implements OnInit {
   searchResults = [];
 
   options: SortablejsOptions;
-
   constructor(private swAPI: SwAPIService) { }
 
   ngOnInit() {
     this.options = {
-      animation: 500,
+      animation: 300,
       onUpdate: (e) => {
-        console.log(this.searchResults);
+        // console.log(this.searchResults);
       }
     }
   }
@@ -27,10 +26,42 @@ export class SwSearchResultsComponent implements OnInit {
   getPeople() {
     this.swAPI.getPeople(this.searchStr).subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         this.searchResults = res['results'];
       },
+      err => console.log(err),
+      () => {
+        this.getHomeWorld();
+
+      }
+
     )
+  }
+  getHomeWorld() {
+    let homeworld = [];
+    this.searchResults.forEach(result => {
+
+      let homeworldUrl = result['homeworld'];
+
+      this.swAPI.getPlanet(homeworldUrl).subscribe(
+        res => {
+          homeworld.push(res['name'])
+
+
+        },
+        err => console.log(err),
+        () => {
+          this.searchResults.map((searchResult, i) => {
+            // console.log("search result", searchResult);
+
+            searchResult['homeworld'] = homeworld[i];
+          })
+        }
+
+      )
+
+    });
+
   }
 
 

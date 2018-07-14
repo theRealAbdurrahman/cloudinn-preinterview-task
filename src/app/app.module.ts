@@ -7,6 +7,10 @@ import { SwSearchResultsComponent } from './sw-search-results/sw-search-results.
 import { SwSearchInputComponent } from './sw-search-input/sw-search-input.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule, MatIconModule } from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +21,11 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
     SortablejsModule.forRoot({ animation: 150 }),
   ],
   providers: [],

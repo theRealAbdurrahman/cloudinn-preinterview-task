@@ -1,25 +1,15 @@
-<form>
+<form #form="ngForm">
   <mat-form-field>
-    <input matInput type="search" placeholder="search" name="searchStr" [(ngModel)]="searchStr" (keyup)="getPeople()">
+    <input matInput #search=ngModel type="search" placeholder="search" name="searchStr" [(ngModel)]="searchStr" (keyup)="getPeople()">
     <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
 </form>
-<div class="cards-container" *ngIf="searchResults.length > 0 && searchStr.length > 1" [sortablejs]="searchResults" [sortablejsOptions]="options">
-  <!-- <div *ngFor="let result of searchResults">{{ result.name}}</div> -->
-  <mat-card *ngFor="let result of searchResults">
-    <mat-card-title>
-      {{result.name}}
-    </mat-card-title>
-    <mat-card-content>
-      <div>
-        Mass: {{result.mass}}
-      </div>
-      <div>
-        height: {{result.height}}
-      </div>
-      <div>
-        home world: {{result.homeworld}}
-      </div>
-    </mat-card-content>
-  </mat-card>
+<div class="cards-container" *ngIf=" searchStr.length > 0 && search.dirty" [sortablejs]="searchResults" [sortablejsOptions]="options">
+  <app-sw-search-results *ngFor="let result of searchResults" [result]="result"></app-sw-search-results>
+</div>
+<div *ngIf="searchResults.length == 0 && search.dirty">
+  "One with such name is fount not" - Yoda.
+</div>
+<div *ngIf="search.value == ''">
+  Search for any Star Wars character
 </div>

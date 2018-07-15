@@ -7,7 +7,7 @@ import { SwSearchResultsComponent } from './sw-search-results/sw-search-results.
 import { SwSearchInputComponent } from './sw-search-input/sw-search-input.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule, MatIconModule } from '@angular/material';
@@ -21,7 +21,7 @@ import { MatInputModule, MatIconModule } from '@angular/material';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    // BrowserAnimationsModule,
+    BrowserAnimationsModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,

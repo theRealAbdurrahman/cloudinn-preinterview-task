@@ -1,24 +1,16 @@
-<form>
-  <mat-form-field>
-    <input matInput type="search" placeholder="search" name="searchStr" [(ngModel)]="searchStr" (keyup)="getPeople()">
-    <mat-icon matSuffix>search</mat-icon>
-  </mat-form-field>
-</form>
-<div class="cards-container" *ngIf="searchResults.length > 0 && searchStr.length > 1" [sortablejs]="searchResults" [sortablejsOptions]="options">
-  <mat-card *ngFor="let result of searchResults">
-    <mat-card-title>
-      {{result.name}}
-    </mat-card-title>
-    <mat-card-content>
-      <div>
-        Mass: {{result.mass}}
-      </div>
-      <div>
-        height: {{result.height}}
-      </div>
-      <div>
-        home world: {{result.homeworld}}
-      </div>
-    </mat-card-content>
-  </mat-card>
-</div>
+<mat-card>
+  <mat-card-title>
+    {{result.name}}
+  </mat-card-title>
+  <mat-card-content>
+    <div>
+      URL: {{result.URL}}
+    </div>
+    <div>
+      height: {{result.height}}
+    </div>
+    <div>
+      home world: {{result.homeworld}}
+    </div>
+  </mat-card-content>
+</mat-card>

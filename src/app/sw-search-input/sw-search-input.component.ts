@@ -26,18 +26,17 @@ export class SwSearchInputComponent implements OnInit {
   getPeople() {
     this.swAPI.getPeople(this.searchStr).subscribe(
       (res) => {
-        // console.log(res);
+        console.log(res['results'].length);
         this.searchResults = res['results'];
       },
       err => console.log(err),
       () => {
         this.getHomeWorld();
-
       }
 
     )
   }
-  getHomeWorld() {
+  getHomeWorld(searchRes?) {
     let homeworld = [];
     this.searchResults.forEach(result => {
 
@@ -46,16 +45,15 @@ export class SwSearchInputComponent implements OnInit {
       this.swAPI.getPlanet(homeworldUrl).subscribe(
         res => {
           homeworld.push(res['name'])
+          this.searchResults.map((searchResult, i) => {
+            searchResult['homeworld'] = homeworld[i];
+            // console.log("search result", searchResult);
 
-
+          })
         },
         err => console.log(err),
         () => {
-          this.searchResults.map((searchResult, i) => {
-            // console.log("search result", searchResult);
 
-            searchResult['homeworld'] = homeworld[i];
-          })
         }
 
       )

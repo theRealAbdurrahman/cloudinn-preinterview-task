@@ -1,4 +1,4 @@
-<form #form="ngForm">
+<form>
   <mat-form-field>
     <input matInput #search=ngModel type="search" placeholder="search" name="searchStr" [(ngModel)]="searchStr" (keyup)="getPeople()">
     <mat-icon matSuffix>search</mat-icon>

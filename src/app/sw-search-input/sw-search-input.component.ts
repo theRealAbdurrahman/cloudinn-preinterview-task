@@ -36,7 +36,7 @@ export class SwSearchInputComponent implements OnInit {
 
     )
   }
-  getHomeWorld(searchRes?) {
+  getHomeWorld() {
     let homeworld = [];
     this.searchResults.forEach(result => {
 

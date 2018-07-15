@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule, MatIconModule } from '@angular/material';
+import { MatInputModule, MatIconModule, MatDividerModule } from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +26,7 @@ import { MatInputModule, MatIconModule } from '@angular/material';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatDividerModule,
     SortablejsModule.forRoot({ animation: 150 }),
   ],
   providers: [],

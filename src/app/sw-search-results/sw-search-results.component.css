@@ -5,6 +5,7 @@
 
  mat-card-title {
    font-family: 'Coda Caption', cursive;
+   margin-bottom: 6px !important;
  }
 
  mat-card:hover {
@@ -12,5 +13,6 @@
  }
 
  mat-card-content {
+   margin-top: 5px;
    padding-top: 5px;
  }

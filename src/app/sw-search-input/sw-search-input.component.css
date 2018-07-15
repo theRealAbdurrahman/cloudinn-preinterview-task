@@ -1,8 +1,15 @@
 .cards-container {
   display: grid;
-  grid-template-columns: 47% 47%;
+  grid-template-columns: 40% 40%;
+  justify-content: center;
   grid-column-gap: 5%;
   grid-row-gap: 15px;
+}
+
+@media screen and (max-width: 960px) {
+  .cards-container {
+    grid-template-columns: 100%
+  }
 }
 
 mat-card {

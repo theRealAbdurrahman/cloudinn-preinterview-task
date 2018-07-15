@@ -5,7 +5,6 @@
   </mat-form-field>
 </form>
 <div class="cards-container" *ngIf="searchResults.length > 0 && searchStr.length > 1" [sortablejs]="searchResults" [sortablejsOptions]="options">
-  <!-- <div *ngFor="let result of searchResults">{{ result.name}}</div> -->
   <mat-card *ngFor="let result of searchResults">
     <mat-card-title>
       {{result.name}}

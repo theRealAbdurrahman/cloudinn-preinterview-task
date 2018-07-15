@@ -3,6 +3,9 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 body {
   background-color: black;
+  background: url("http://www.pptbackgrounds.org/uploads/star-wars-backgrounds-wallpapers.jpg");
+  background: url("https://www.lego.com/r/www/r/catalogs/-/media/catalogs/activities/star%20wars/2016/backgrounds/lsw_activities_backgrounds_starfield_primary.jpg?l.r=-1377126531");
+  background-size: cover;
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-label {

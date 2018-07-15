@@ -1,3 +1,6 @@
+<div *ngIf="search.value == ''">
+  Search for any Star Wars character
+</div>
 <form>
   <mat-form-field>
     <input matInput #search=ngModel type="search" placeholder="search" name="searchStr" [(ngModel)]="searchStr" (keyup)="getPeople()">
@@ -9,7 +12,4 @@
 </div>
 <div *ngIf="searchResults.length == 0 && search.dirty">
   "One with such name is fount not" - Yoda.
-</div>
-<div *ngIf="search.value == ''">
-  Search for any Star Wars character
 </div>

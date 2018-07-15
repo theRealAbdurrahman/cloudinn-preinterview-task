@@ -1,8 +1,13 @@
 .cards-container {
   display: grid;
-  grid-template-columns: 48% 48%;
-  grid-column-gap: 20px;
-  grid-row-gap: 7px;
+  grid-template-columns: 47% 47%;
+  grid-column-gap: 5%;
+  grid-row-gap: 15px;
+}
+
+mat-card {
+  align-self: center;
+  margin: 10px;
 }
 
 mat-form-field {
@@ -11,4 +16,11 @@ mat-form-field {
   width: 95%;
   margin: 10px auto !important;
   border-color: yellow;
+}
+
+div {
+  margin: 15px;
+  padding: 15px;
+  text-align: center;
+  color: yellow;
 }

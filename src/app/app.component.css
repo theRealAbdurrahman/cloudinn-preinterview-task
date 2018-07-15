@@ -1,0 +1,11 @@
+ @import url('https://fonts.googleapis.com/css?family=Coda+Caption:800');
+ footer,
+ h1 {
+   color: yellow;
+   font-family: 'Coda Caption', sans-serif;
+   margin: 25px auto;
+   width: 100%;
+   text-align: center;
+   font-size: 2em;
+   text-transform: capitalize;
+ }

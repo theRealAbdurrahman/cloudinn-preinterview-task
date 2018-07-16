@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./sw-search-results.component.css']
 })
 export class SwSearchResultsComponent implements OnInit {
-  @Input() result: any;
+  @Input() result: any = [];
 
   constructor() { }
 

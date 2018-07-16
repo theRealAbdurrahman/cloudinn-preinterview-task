@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SwSearchInputComponent implements OnInit {
   searchStr: any = "";
-  searchResults = [];
+  searchResults: any = [];
 
   options: SortablejsOptions;
   constructor(private swAPI: SwAPIService) { }
@@ -29,7 +29,6 @@ export class SwSearchInputComponent implements OnInit {
   getPeople() {
     this.swAPI.getPeople(this.searchStr).subscribe(
       (res) => {
-        console.log(res['results'].length);
         // set the search results coming from the API to the searchResult arr
         this.searchResults = res['results'];
       },

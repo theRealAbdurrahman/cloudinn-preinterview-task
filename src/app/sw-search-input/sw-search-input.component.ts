@@ -15,6 +15,7 @@ export class SwSearchInputComponent implements OnInit {
   constructor(private swAPI: SwAPIService) { }
 
   ngOnInit() {
+    //scroablejs options
     this.options = {
       animation: 300,
       onUpdate: (e) => {
@@ -36,26 +37,28 @@ export class SwSearchInputComponent implements OnInit {
 
     )
   }
+  /**
+   * @description replaces homeworld url with it's name;
+   *  
+   */
   getHomeWorld() {
+    // Array of homewords that should take place of search results homeworld url
     let homeworld = [];
+    // iterate over every person object
     this.searchResults.forEach(result => {
-
+      // store the homeworld url 
       let homeworldUrl = result['homeworld'];
 
       this.swAPI.getPlanet(homeworldUrl).subscribe(
         res => {
+          // push the name of the homeworld to the homeworlds array
           homeworld.push(res['name'])
+          //iterate over the search results and replace the homeworld url with the homeworld name stored in the homeworlds[]
           this.searchResults.map((searchResult, i) => {
             searchResult['homeworld'] = homeworld[i];
-            // console.log("search result", searchResult);
-
           })
         },
         err => console.log(err),
-        () => {
-
-        }
-
       )
 
     });

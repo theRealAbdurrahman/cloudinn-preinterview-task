@@ -1,4 +1,4 @@
-<div *ngIf="search.value == ''">
+<div id="search-for-char" *ngIf="search.value == ''">
   Search for any Star Wars character
 </div>
 <form>
@@ -10,6 +10,6 @@
 <div class="cards-container" *ngIf=" searchStr.length > 0 && search.dirty" [sortablejs]="searchResults" [sortablejsOptions]="options">
   <app-sw-search-results *ngFor="let result of searchResults" [result]="result"></app-sw-search-results>
 </div>
-<div *ngIf="searchResults.length == 0 && search.dirty">
+<div id="yoda-quote" *ngIf="searchResults.length == 0 && search.dirty">
   "One with such name is fount not" - Yoda.
 </div>

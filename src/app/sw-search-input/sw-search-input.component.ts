@@ -23,22 +23,26 @@ export class SwSearchInputComponent implements OnInit {
       }
     }
   }
-
+  /**
+   * @description onKeyup calls the getPeople() method from the SW service and populates the searchResult arr with the data coming from the API
+   */
   getPeople() {
     this.swAPI.getPeople(this.searchStr).subscribe(
       (res) => {
         console.log(res['results'].length);
+        // set the search results coming from the API to the searchResult arr
         this.searchResults = res['results'];
       },
       err => console.log(err),
       () => {
+        // when complete call this function to replace the homeworld url with its name
         this.getHomeWorld();
       }
 
     )
   }
   /**
-   * @description replaces homeworld url with it's name;
+   * @description replaces homeworld url with its name;
    *  
    */
   getHomeWorld() {

@@ -24,42 +24,22 @@ export class SwSearchInputComponent implements OnInit {
   }
 
   getPeople() {
-    this.swAPI.getPeople(this.searchStr).subscribe(
-      (res) => {
-        console.log(res['results'].length);
-        this.searchResults = res['results'];
-      },
-      err => console.log(err),
-      () => {
-        this.getHomeWorld();
-      }
-
-    )
+    this.swAPI.getPeople(this.searchStr)
+      .then(res => res['results'])
+      .then(results => this.getHomeWorld(results))
   }
-  getHomeWorld() {
-    let homeworld = [];
-    this.searchResults.forEach(result => {
 
-      let homeworldUrl = result['homeworld'];
-
-      this.swAPI.getPlanet(homeworldUrl).subscribe(
-        res => {
-          homeworld.push(res['name'])
-          this.searchResults.map((searchResult, i) => {
-            searchResult['homeworld'] = homeworld[i];
-            // console.log("search result", searchResult);
-
-          })
-        },
-        err => console.log(err),
-        () => {
-
-        }
-
-      )
+  getHomeWorld(results) {
+    const x = this.swAPI
+    results.forEach((result, i) => {
+      this.swAPI.getPlanet(result['homeworld'])
+        .then(homeworld => homeworld["name"])
+        .then(homeworld => {
+          console.log(this.searchResults);
+          this.searchResults[i] = { ...result, ...{ homeworld } }
+        })
 
     });
-
   }
 
 

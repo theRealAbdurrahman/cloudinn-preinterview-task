@@ -10,9 +10,11 @@ export class SwAPIService {
 
   constructor(private http: HttpClient) { }
   getPeople(searchStr) {
-    return this.http.get(`${this.baseUrl}/people/?search=${searchStr}`);
+    return this.http
+      .get(`${this.baseUrl}/people/?search=${searchStr}`)
+      .toPromise();
   }
   getPlanet(id) {
-    return this.http.get(id)
+    return this.http.get(id).toPromise();
   }
 }

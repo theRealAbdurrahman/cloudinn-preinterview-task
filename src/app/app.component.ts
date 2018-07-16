@@ -8,6 +8,4 @@ import { SortablejsOptions } from 'angular-sortablejs/dist';
 })
 export class AppComponent {
   title = 'app';
- 
-
 }
